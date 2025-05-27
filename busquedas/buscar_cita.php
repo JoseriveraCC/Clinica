@@ -70,7 +70,7 @@ include "../inicia_conexion.php";
                 <td>Editar</td>
                 <td>Eliminar</td>
                 <?php
-                $sql = "SELECT c.cita, c.fecha as fecha_cita, c.hora, t.trabajo, t.nombre, pr.precio, co.consulta, co.fecha as fecha_consulta, co.correo, o.dpi FROM cita c
+                $sql = "SELECT c.cita, c.fecha as fecha_cita, c.hora, t.trabajo, t.nombre, pr.precio, pr.precioid, co.consulta, co.fecha as fecha_consulta, co.correo, o.dpi FROM cita c
                         JOIN trabajo t ON c.trabajo = t.trabajo
                         JOIN precio pr ON c.precioid = pr. precioid
                         JOIN consulta co ON c.consulta = co.consulta
@@ -92,7 +92,7 @@ include "../inicia_conexion.php";
                     echo "<td>".$fila['fecha_consulta']."</td>";
                     echo "<td>".$fila['correo']."</td>";                    
                     echo "<td>".$fila['dpi']."</td>";
-                    echo "<td><a href='editar_cita.php?cita=".$fila['cita']."'>Editar</a></td>";
+                    echo "<td><a href='editar_cita.php?cita=".$fila['cita']."&trabajo=".$fila['trabajo']."&precioid=".$fila['precioid']."&consulta=".$fila['consulta']."&dpi=".$fila['dpi']."'>Editar</a></td>";
                     echo "<td><a href='eliminar_cita.php?cita=".$fila['cita']."'>Eliminar</a></td>";
                     echo "</tr>";
                 }

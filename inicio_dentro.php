@@ -10,14 +10,20 @@ include 'inicia_conexion.php';
     <title>Registros y Busquedas</title>
 </head>
     <body>
-    <div class="menu">
-        <li class="item" id="mn1">
-            <a class="btn" href="./registros/registros.php">REGISTROS</a>
-        </li>
-        <li class="item" id="mn2">
-            <a class="btn" href="./busquedas/busquedas.php">BUSQUEDAS</a>
-        </li>
-        
+        <div class="contenedor-botones">
+        <div class="menu">
+            <li class="item" id="mn1">
+                <a class="btn" href="./registros/registros.php">REGISTROS</a>
+            </li>
+            <li class="item" id="mn2">
+                <a class="btn" href="./busquedas/busquedas.php">BUSQUEDAS</a>
+            </li>
+        </div>
+        <div class="menu">
+            <li class="item" id="mn3">
+                <a class="btn-volver" href="inicio.php">SALIR</a>
+            </li>
+        </div>
     </div>
     </body>
 </html>

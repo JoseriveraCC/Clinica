@@ -2,17 +2,13 @@
 include "../inicia_conexion.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $cita = $_POST['cita'];
-    $fecha = $_POST['fecha'];
-    $hora = $_POST['hora'];
-    $trabajo = $_POST['trabajo'];
-    $precioid = $_POST['precioid'];
-    $consulta = $_POST['consulta'];
-    $dpi = $_POST['dpi'];
+    $clinica_horarios = $_POST['clinica_horarios'];
+    $horarios = $_POST['horarios'];
+    $clinica = $_POST['clinica'];
 
-    $sql = "UPDATE cita SET fecha = ?, hora = ?, trabajo = ?, precioid = ?, consulta = ?, dpi = ? WHERE cita = ?";
+    $sql = "UPDATE clinica_horarios SET horarios = ?, clinica = ? WHERE clinica_horarios = ?";
     $stmt = $conexion->prepare($sql);
-    $stmt->bind_param("ssiiiii", $fecha, $hora, $trabajo, $precioid, $consulta, $dpi, $cita);
+    $stmt->bind_param("iii", $horarios, $clinica, $clinica_horarios);
 
     if ($stmt->execute()) {
         echo "Consulta actualizada correctamente.";
@@ -27,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actualizar Cita</title>
+    <title>Actualizar Clinica con Hora</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -40,6 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </style>
 </head>
 <body>
-    <a href="busqueda_cita.php">Regresar</a>
+    <a href="busqueda_clinicahora.php">Regresar</a>
 </body>
 </html>

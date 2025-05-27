@@ -2,20 +2,16 @@
 include "../inicia_conexion.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $cita = $_POST['cita'];
-    $fecha = $_POST['fecha'];
-    $hora = $_POST['hora'];
-    $trabajo = $_POST['trabajo'];
-    $precioid = $_POST['precioid'];
-    $consulta = $_POST['consulta'];
-    $dpi = $_POST['dpi'];
+    $horarios = $_POST['horarios'];
+    $hora_Inicio = $_POST['hora_Inicio'];
+    $hora_Fin = $_POST['hora_Fin'];
 
-    $sql = "UPDATE cita SET fecha = ?, hora = ?, trabajo = ?, precioid = ?, consulta = ?, dpi = ? WHERE cita = ?";
+    $sql = "UPDATE horarios SET hora_Inicio = ?, hora_Fin = ? WHERE horarios = ?";
     $stmt = $conexion->prepare($sql);
-    $stmt->bind_param("ssiiiii", $fecha, $hora, $trabajo, $precioid, $consulta, $dpi, $cita);
+    $stmt->bind_param("ssi", $hora_Inicio, $hora_Fin, $horarios);
 
     if ($stmt->execute()) {
-        echo "Consulta actualizada correctamente.";
+        echo "Horario se ha actualizado correctamente.";
     } else {
         echo "Error al actualizar: " . $stmt->error;
     }
@@ -27,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actualizar Cita</title>
+    <title>Actualizar Horario</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -40,6 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </style>
 </head>
 <body>
-    <a href="busqueda_cita.php">Regresar</a>
+    <a href="busqueda_horarios.php">Regresar</a>
 </body>
 </html>

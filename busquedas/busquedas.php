@@ -27,6 +27,17 @@
                 <a class="btn" href="busqueda_cita.php">CITA</a>
             </li>
         </div>
+        <div class="menu">
+            <li class="item" id="mn8">
+                <a class="btn" href="busqueda_horarios.php">HORARIOS</a>
+            </li>
+            <li class="item" id="mn9">
+                <a class="btn" href="busqueda_clinica.php">CLINICA</a>
+            </li>
+            <li class="item" id="mn10">
+                <a class="btn" href="busqueda_clinicahora.php">CLINICA HORA</a>
+            </li>
+        </div>
         
         <div class="volver">
             <a href="../inicio_dentro.php" class="btn-volver">Regresar</a> 
