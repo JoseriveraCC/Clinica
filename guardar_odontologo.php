@@ -7,6 +7,7 @@ $dpi = $_POST['dpi'];
 $telefono = $_POST['telefono'];
 $clave = $_POST['clave'];
 
+// Valida datos y guarda odontologo
 try {
     $stmt = $conexion->prepare("INSERT INTO odontologo (dpi, clave, nombre, apellido, telefono) VALUES (?, ?, ?, ?, ?)");
     $stmt->bind_param("isssi", $dpi, $clave, $nombre, $apellido, $telefono);

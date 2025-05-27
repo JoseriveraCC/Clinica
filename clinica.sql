@@ -32,6 +32,7 @@ CREATE TABLE precio (
 
 CREATE TABLE odontologo (
     dpi INT,
+    clave VARCHAR(200),
     nombre VARCHAR(100),
     apellido VARCHAR(100),
     telefono INT,
@@ -41,7 +42,7 @@ CREATE TABLE odontologo (
 CREATE TABLE cita (
     cita INT AUTO_INCREMENT,
     fecha DATE,
-    hora DATE,
+    hora TIME,
     trabajo INT,
     precioid INT,
     consulta INT,
